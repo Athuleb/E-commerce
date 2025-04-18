@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCart | great deals</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #0c4b33;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: rgb(110, 249, 198);
+        }
+
+        .main {
+            width: 100%;
+            height: 60vh;
+        }
+
+        .main img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Media Queries for Responsiveness */
+
+        /* For tablets */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 20px 10px;
+            }
+
+            .logo {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+
+            nav ul {
+                flex-direction: row;
+                /* Stack navigation items vertically */
+                gap: 30px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .main {
+                height: 50vh;
+            }
+
+            .main img {
+                object-fit: cover;
+            }
+        }
+
+        /* For mobile devices */
+        @media (max-width: 480px) {
+            header {
+                padding: 15px 10px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+
+            nav ul {
+                flex-direction: row;
+                /* Stack navigation items vertically */
+                gap: 30px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .main {
+                height: 40vh;
+            }
+
+            .main img {
+                object-fit: cover;
+               
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">MyCart</div>
+        <nav>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="shop">Shop</a></li>
+                <li><a href="deals">Deals</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="auth/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main">
+        <img src="{% static 'res/uc.png' %}" alt="">
+    </div>
+</body>
+
+</html>

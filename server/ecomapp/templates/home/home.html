@@ -1,0 +1,293 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCart | Shop Smart</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #0c4b33;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure the header elements wrap on smaller screens */
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: rgb(110, 249, 198);
+}
+
+.hero {
+    background-image: url('{% static "res/bg4.jpg" %}'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed;
+    padding: 100px 40px;
+    color: white;
+    text-align: center;
+    height: 80vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333;
+    background-color: #00aa55;
+    padding: 0px 30px;
+    border-radius: 30px;
+}
+
+.hero-content h1 span {
+    color: #ffffff;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-content .btn {
+    padding: 14px 30px;
+    background-color: #008744;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease; /* Add transition for padding and border-radius */
+}
+
+.hero-content .btn:hover {
+    background-color: #00aa55;
+    padding: 14px 50px;
+    border-radius: 20px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 20px;
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    margin: 20px;
+}
+
+.feature img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #0c4b33;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0c4b33;
+    color: white;
+    font-size: 14px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px; /* Adjust hero section padding */
+        height: 60vh; /* Reduce the height of the hero section */
+    }
+
+    .hero-content h1 {
+        font-size: 36px; /* Smaller font size for smaller screens */
+    }
+
+    .hero-content p {
+        font-size: 18px; /* Smaller font size for paragraph */
+    }
+
+    .hero-content .btn {
+        padding: 12px 25px; /* Smaller button padding */
+    }
+
+    nav ul {
+        flex-direction: row; /* Stack navigation items vertically */
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .features {
+        flex-direction: column; /* Stack features vertically */
+        align-items: center;
+    }
+
+    .feature {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 10px; /* Further reduce padding */
+        height: 50vh; /* Adjust hero height */
+    }
+
+    .hero-content h1 {
+        font-size: 28px; /* Further reduce font size */
+    }
+
+    .hero-content p {
+        font-size: 16px; /* Further reduce font size */
+    }
+
+    .hero-content .btn {
+        padding: 10px 20px; /* Smaller button padding */
+        font-size: 14px; /* Adjust button text size */
+    }
+
+    nav ul {
+        flex-direction: row; /* Stack navigation items vertically */
+        gap: 30px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .features {
+        padding: 30px 10px; /* Adjust padding for small screens */
+        
+    }
+
+    .feature img {
+        width: 60px; /* Smaller icon size */
+    }
+
+    .feature h3 {
+        font-size: 18px; /* Smaller font size for feature titles */
+    }
+
+    .feature p {
+        font-size: 14px; /* Smaller font size for feature description */
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MyCart</div>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="shop">Shop</a></li>
+                <li><a href="deals">Deals</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="auth/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+      
+        <div class="hero-content">
+            
+            <h1>Welcome to <span>MyCart</span></h1>
+            <p>Your one-stop shop for everything!</p>
+            <a href="#" class="btn">Start Shopping</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <img src="{% static 'images/fast-delivery.png' %}" alt="Fast Delivery">
+            <h3>Fast Delivery</h3>
+            <p>Get your products delivered in lightning speed!</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'images/best-price.png' %}" alt="Best Prices">
+            <h3>Best Prices</h3>
+            <p>Unbeatable prices on top brands and products.</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'images/support.png' %}" alt="24/7 Support">
+            <h3>24/7 Support</h3>
+            <p>We’re always here to help you with your orders.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MyCart. All rights reserved.</p>
+    </footer>
+</body>
+</html>

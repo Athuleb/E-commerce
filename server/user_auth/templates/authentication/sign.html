@@ -1,0 +1,37 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+    <title>Sign</title>
+</head>
+
+<body>
+    <div class="main">
+        <video autoplay muted loop id="bg-video">
+            <source src="{% static 'res/authbg.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <a href="/" class="back-link" style="background: none;">&#8592;</a>
+        <div class="signup-container">
+            <h2>Sign Up</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="text" name="phone" placeholder="Phone" required>
+                <button type="submit">Sign Up</button>
+  
+            {% if error %}
+            <p style="color:red;">{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
